@@ -13,6 +13,7 @@
 		2192D8D71AEB4B4100F62180 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2192D8D61AEB4B4100F62180 /* Images.xcassets */; };
 		2192D8DA1AEB4B4100F62180 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2192D8D81AEB4B4100F62180 /* LaunchScreen.xib */; };
 		2192D8E61AEB4B4100F62180 /* RotuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192D8E51AEB4B4100F62180 /* RotuleTests.swift */; };
+		2192D8F01AEB4C0E00F62180 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2192D8EF1AEB4C0E00F62180 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,8 @@
 		2192D8DF1AEB4B4100F62180 /* RotuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RotuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2192D8E41AEB4B4100F62180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2192D8E51AEB4B4100F62180 /* RotuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotuleTests.swift; sourceTree = "<group>"; };
+		2192D8EF1AEB4C0E00F62180 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		2192D8F11AEB4C0E00F62180 /* Rotule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Rotule.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2192D8F01AEB4C0E00F62180 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +63,7 @@
 		2192D8C11AEB4B4000F62180 = {
 			isa = PBXGroup;
 			children = (
+				2192D8EF1AEB4C0E00F62180 /* HealthKit.framework */,
 				2192D8CC1AEB4B4100F62180 /* Rotule */,
 				2192D8E21AEB4B4100F62180 /* RotuleTests */,
 				2192D8CB1AEB4B4100F62180 /* Products */,
@@ -77,6 +82,7 @@
 		2192D8CC1AEB4B4100F62180 /* Rotule */ = {
 			isa = PBXGroup;
 			children = (
+				2192D8F11AEB4C0E00F62180 /* Rotule.entitlements */,
 				2192D8CF1AEB4B4100F62180 /* AppDelegate.swift */,
 				2192D8D11AEB4B4100F62180 /* ViewController.swift */,
 				2192D8D31AEB4B4100F62180 /* Main.storyboard */,
@@ -161,6 +167,12 @@
 				TargetAttributes = {
 					2192D8C91AEB4B4000F62180 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = SH52BQ2ZXA;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					2192D8DE1AEB4B4100F62180 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -340,9 +352,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rotule/Rotule.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Rotule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -350,9 +366,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rotule/Rotule.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Rotule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
